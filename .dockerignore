@@ -1,0 +1,16 @@
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore test and documentation directories
+/test
+/docs
+
+# Ignore Git and SVN directories
+.git
+.svn
+
+# Ignore virtual environment
+venv/
