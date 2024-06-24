@@ -38,7 +38,7 @@ def get_hospitals():
         cursor.execute(sql)
         result = cursor.fetchall()
     
-    return jsonify({"Products":result}), 200
+    return jsonify({"Hospitals":result}), 200
 
 @app.route('/hospital/<int:code>', methods=['PUT'])
 def update_hospital(code):
@@ -53,7 +53,7 @@ def update_hospital(code):
         cursor.execute(sql, (int(hospital_data['code']), hospital_data['name'],  int(hospital_data['mobile']), hospital_data['email'], hospital_data['address'], hospital_data['location'], int(hospital_data['pincode']), int(code)))
     connection.commit()
 
-    return jsonify({"Message":"Product updated successfully"}), 200
+    return jsonify({"Message":"Hospital updated successfully"}), 200
 
 @app.route('/hospital/<int:code>', methods=['DELETE'])
 def delete_hospital(code):
@@ -62,7 +62,7 @@ def delete_hospital(code):
         cursor.execute(sql, int(code))
     connection.commit()
     
-    return jsonify({"Message":"Product Deleted Successfully"}), 200               
+    return jsonify({"Message":"Hospital Deleted Successfully"}), 200               
 
 if __name__ == "__main__":
     app.run(host = '0.0.0.0')
